@@ -48,6 +48,7 @@ img {
 }
 
 #processing {
+    opacity: 0;
     display: block;
     position: absolute;
     bottom: 5vw;
@@ -59,6 +60,9 @@ img {
     border-radius: 100%;
     width: 4vw;
     height: 4vw;
+}
+
+#processing.active {
     animation-name: rotate;
     animation-iteration-count: infinite;
     animation-duration: 1s;
