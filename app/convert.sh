@@ -15,7 +15,7 @@ echo $BASENAME
     -c:v libx264 -vf scale=1280:-2 "converted/"$FILENAME"/"$BASENAME"_1280.mp4" \
     -c:v libx264 -vf scale=640:-2 "converted/"$FILENAME"/"$BASENAME"_640.mp4"
 
-zip -r -j "public/downloads/"$FILENAME".zip" "converted/"$FILENAME
+/usr/bin/zip -r -j "public/downloads/"$FILENAME".zip" "converted/"$FILENAME
 
 rm -rf $DESTINATION$FILENAME
 rm -rf "converted/"$FILENAME
