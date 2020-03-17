@@ -102,6 +102,8 @@ async function poll (id)
             document.body.removeChild(link)
             delete link
             document.querySelector('#processing').classList.remove('active')
+
+            return
         }
     }
     catch (error)
