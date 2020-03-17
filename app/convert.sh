@@ -11,9 +11,9 @@ echo $BASENAME
 
 /usr/bin/ffmpeg -i $DESTINATION$FILENAME \
     -vframes 1 "converted/"$FILENAME"/"$BASENAME"_poster.jpg" \
-    -c:v h264_cuvid -vf scale=1920:-2 "converted/"$FILENAME"/"$BASENAME"_1920.mp4" \
-    -c:v h264_cuvid -vf scale=1280:-2 "converted/"$FILENAME"/"$BASENAME"_1280.mp4" \
-    -c:v h264_cuvid -vf scale=640:-2 "converted/"$FILENAME"/"$BASENAME"_640.mp4"
+    -c:v h264_nvenc -vf scale=1920:-2 "converted/"$FILENAME"/"$BASENAME"_1920.mp4" \
+    -c:v h264_nvenc -vf scale=1280:-2 "converted/"$FILENAME"/"$BASENAME"_1280.mp4" \
+    -c:v h264_nvenc -vf scale=640:-2 "converted/"$FILENAME"/"$BASENAME"_640.mp4"
 
 /usr/bin/zip -r -j "public/downloads/"$FILENAME".zip" "converted/"$FILENAME
 
