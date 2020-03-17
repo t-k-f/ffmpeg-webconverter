@@ -1,5 +1,9 @@
 FROM nvidia/cuda:10.2-runtime
 
+# Set Env to all
+
+ENV NVIDIA_DRIVER_CAPABILITIES all
+
 # Update OS
 
 RUN apt-get update && apt-get upgrade -y
