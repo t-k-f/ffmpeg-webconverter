@@ -56,12 +56,24 @@ app.post('/convert', upload.single('video'), (req, res) =>
     {
         if (err)
         {
+            console.log(err)
+
             db.get('conversions')
                 .find({ id: filename })
                 .assign({ status: 'error' })
                 .write()
 
             return
+        }
+
+        if (stdout)
+        {
+            console.log(stdout)
+        }
+
+        if (stderr)
+        {
+            console.log(stderr)
         }
 
         db.get('conversions')
