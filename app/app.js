@@ -73,7 +73,7 @@ app.post('/convert', upload.single('video'), (req, res) =>
     res.send({
         id: file.filename
     })
- })
+})
 
 app.get('/status/:id', (req, res) =>
 {
