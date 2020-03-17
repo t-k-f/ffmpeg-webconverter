@@ -1,1 +1,22 @@
-FROM ubuntu:latest
+FROM node:lts
+
+# Update OS
+
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install ffmpeg zip -y
+
+# Copy to workdir
+
+WORKDIR /home/node
+COPY app .
+
+# Own files as node
+
+RUN chown -R node:node /home/node
+
+# Switch to node user
+
+USER node
+RUN npm install
+
+CMD [ "node", "./app.js"]
